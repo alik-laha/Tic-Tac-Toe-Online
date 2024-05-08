@@ -22,6 +22,9 @@ const JoinOrCreateRoom = () => {
         setRoomno(Math.floor(Math.random() * 1000000));
         setView("none");
     }
+    const handleJoinRoom = () => {
+        console.log('Join Room');
+    }
     return (
         <>
             <div style={{ display: View }}>
@@ -33,8 +36,10 @@ const JoinOrCreateRoom = () => {
             </div>
             <div style={{ display: joinVisible }}>
                 <h1>Join Rooms</h1>
-                <input type="text" placeholder="Enter Room ID" value={roomID} onChange={(e) => setRoomID(e.target.value)} />
-                <button>Join</button>
+                <div className="Button">
+                    <input type="text" placeholder="Enter Room ID" value={roomID} onChange={(e) => setRoomID(e.target.value)} />
+                    <button onClick={handleJoinRoom}>Join</button>
+                </div>
             </div>
 
             <div style={{ display: createVisible }}>
