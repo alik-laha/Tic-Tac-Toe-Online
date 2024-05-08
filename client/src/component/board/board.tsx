@@ -1,9 +1,7 @@
 import Box from "./box";
 import { useEffect, useState } from "react";
 import "./board.css";
-import io from "socket.io-client"
-
-const socket = io("http://localhost:4000");
+import { socket } from "../../socket";
 
 const Board = () => {
     const [count, setCount] = useState(Array(9).fill(null));

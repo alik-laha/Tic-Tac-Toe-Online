@@ -17,9 +17,9 @@ const io = new SocketServer(server, {
 const rooms = new Map();
 
 io.on('connection', (socket) => {
-    let room
-    socket.on('joinRoom', (room) => {
 
+    socket.on('joinRoom', (room) => {
+        console.log('joined room', room);
         socket.join(room);
         if (!rooms.has(room)) {
             rooms.set(room, { gameBoard: Array(9).fill(null), currentPlayer: 'X' });
@@ -40,10 +40,6 @@ io.on('connection', (socket) => {
             }
         }
     })
-    socket.on('disconnect', () => {
-        console.log('User disconnected:', socket.id);
-    });
-
 });
 
 

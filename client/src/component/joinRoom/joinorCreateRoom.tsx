@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { socket as io } from "../../socket";
 
 const JoinOrCreateRoom = () => {
-
+    const navigate = useNavigate();
     const [roomID, setRoomID] = useState('');
     const [joinVisible, setJoinVisible] = useState("none");
     const [createVisible, setCreateVisible] = useState("none");
@@ -19,11 +21,16 @@ const JoinOrCreateRoom = () => {
     const handleCreate = () => {
         console.log('Create Room');
         setCreateVisible("block");
-        setRoomno(Math.floor(Math.random() * 1000000));
+        const room = Math.floor(Math.random() * 1000000);
+        setRoomno(room);
+        localStorage.setItem("room", room.toString());
+        io.emit('joinRoom', { room: room.toString() });
         setView("none");
     }
     const handleJoinRoom = () => {
         console.log('Join Room');
+
+        navigate('/');
     }
     return (
         <>
