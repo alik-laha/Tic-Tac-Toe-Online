@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+    /* outline: 1px solid red; */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1e1c1c;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.turn {
+    text-align: center;
+    font-size: 45px;
+    color: #fff;
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+}
+
+.board {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 5px;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* @media screen and (max-width: 600px) {
+    .board {
+        width: 90%;
+        height: 90%;
+    }
+
+    .row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+} */
+
+.box {
+    width: 5.3rem;
+    height: 5.3rem;
+    border: 2px solid #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    background-color: #8b8989ca;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.text {
+    color: white;
+    text-shadow: rgb(5, 5, 5) -7px 6px 0px
+}
+
+.point {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.Tex {
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
