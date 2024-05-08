@@ -2,15 +2,17 @@ import dotenv from 'dotenv'
 import app from "./app"
 import { Server as SocketServer } from 'socket.io'
 import { createServer } from 'http'
+dotenv.config()
 
 const server = createServer(app)
+console.log(process.env.CLIENT_URL)
 const io = new SocketServer(server, {
     cors: {
-        origin: process.env.FRONTEND_URL,
+        origin: process.env.CLIENT_URL,
     }
 })
 
-dotenv.config()
+
 
 const rooms = new Map();
 
