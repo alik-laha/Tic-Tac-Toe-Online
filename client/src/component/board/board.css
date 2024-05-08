@@ -22,6 +22,13 @@ body {
     padding: 0;
 }
 
+.Button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
 .turn {
     text-align: center;
     font-size: 45px;
