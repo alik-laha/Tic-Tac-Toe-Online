@@ -1,5 +1,5 @@
 import Box from "./box";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./board.css";
 import io from "socket.io-client"
 
